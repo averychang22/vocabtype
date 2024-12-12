@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vocabulary Game - Results</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="results-container">
+        <div class="pixel-art-container">
+            <div class="pixel-text">CONGRATULATIONS!</div>
+        </div>
+        
+        <div class="score-display">
+            <div class="score-value">
+                <span id="score">0</span>
+                <span class="score-denominator"> /100</span>
+            </div>
+        </div>
+
+        <div class="time-display">
+            <div class="time-label">Time:</div>
+            <div class="time-value" id="time">0:00</div>
+        </div>
+
+        <div class="results-section">
+            <div class="section-title">CORRECT WORDS</div>
+            <div class="word-list correct" id="correct-words"></div>
+
+            <div class="section-title">WRONG WORDS</div>
+            <div class="word-list wrong" id="wrong-words"></div>
+        </div>
+
+        <button class="pixel-button" onclick="window.location.href='index.html'">TRY AGAIN</button>
+    </div>
+    <script src="js/results.js"></script>
+    <audio id="bgMusic" loop preload="auto">
+        <source src="audio/win.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <button id="musicToggle" class="music-button">🔊</button>
+</body>
+</html>
