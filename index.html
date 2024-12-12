@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vocabulary Game</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="index-page">
+    <div class="pixel-container">
+        <div class="pixel-art-title">
+            <div class="game-title">VOCABULARY</div>
+            <div class="game-subtitle">CHALLENGE</div>
+        </div>
+
+        <div class="options-container">
+            <div class="option-box custom-words">
+                <div class="pixel-card">
+                    <h2>Custom Words</h2>
+                    <div id="vocabulary-inputs"></div>
+                    <button id="start-game" class="pixel-button">Start Game</button>
+                </div>
+            </div>
+
+            <div class="option-divider">OR</div>
+
+            <div class="option-box random-words">
+                <div class="pixel-card">
+                    <h2>Random C1 Words</h2>
+                    <p>Play with 10 random C1 level words</p>
+                    <button id="random-game" class="pixel-button">Quick Start</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/vocabulary.js"></script>
+    <script src="js/input.js"></script>
+    <audio id="bgMusic" loop preload="auto">
+        <source src="audio/background-music.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <button id="musicToggle" class="music-button">🔊</button>
+</body>
+</html>

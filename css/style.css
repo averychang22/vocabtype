@@ -7,6 +7,15 @@
 
 .word-input {
     margin: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.input-counter {
+    font-weight: bold;
+    min-width: 20px;
 }
 
 input[type="text"] {
@@ -27,4 +36,433 @@ button {
 
 button:hover {
     background-color: #45a049;
+}
+
+.music-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #333;
+    color: white;
+    border: 2px solid #fff;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.music-button:hover {
+    transform: scale(1.1);
+}
+
+.music-button.muted {
+    background: #666;
+}
+
+/* Index page specific styles */
+.index-page {
+    background-color: #5C94FC;
+    font-family: 'Press Start 2P', cursive;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pixel-container {
+    max-width: 1000px;
+    width: 90%;
+    margin: 20px;
+}
+
+.pixel-art-title {
+    text-align: center;
+    margin-bottom: 3rem;
+    animation: float 3s ease-in-out infinite;
+}
+
+.game-title {
+    font-size: 3rem;
+    color: #FFD700;
+    text-shadow: 4px 4px #000;
+    margin-bottom: 1rem;
+}
+
+.game-subtitle {
+    font-size: 2rem;
+    color: #FFF;
+    text-shadow: 3px 3px #000;
+}
+
+.options-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.option-box {
+    flex: 1;
+    min-width: 300px;
+}
+
+.pixel-card {
+    background-color: #FFF;
+    border: 4px solid #000;
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+.pixel-card:hover {
+    transform: translateY(-5px);
+}
+
+.pixel-card h2 {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+.option-divider {
+    font-size: 1.5rem;
+    color: #FFF;
+    text-shadow: 2px 2px #000;
+    padding: 1rem;
+}
+
+.word-input {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.input-counter {
+    color: #FFD700;
+    text-shadow: 1px 1px #000;
+    font-size: 0.8rem;
+}
+
+input[type="text"] {
+    padding: 0.5rem;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.8rem;
+    border: 3px solid #000;
+    border-radius: 4px;
+    width: 200px;
+    background-color: #f0f0f0;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: #5C94FC;
+    background-color: #FFF;
+}
+
+.pixel-button {
+    padding: 1rem 2rem;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1rem;
+    color: #FFF;
+    background-color: #4CAF50;
+    border: 4px solid #000;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: all 0.2s;
+}
+
+.pixel-button:hover {
+    transform: scale(1.05);
+    background-color: #45a049;
+}
+
+.pixel-button:active {
+    transform: scale(0.95);
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Pixel art decorations */
+.pixel-card::before {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    pointer-events: none;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .game-title {
+        font-size: 2rem;
+    }
+    
+    .game-subtitle {
+        font-size: 1.5rem;
+    }
+    
+    .options-container {
+        flex-direction: column;
+    }
+    
+    .option-box {
+        width: 100%;
+    }
+}
+
+/* Game Page CSS */
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #5C94FC;
+}
+
+.game-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Press Start 2P', cursive;
+}
+
+#score {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 20px;
+    color: white;
+    text-shadow: 2px 2px #000;
+    z-index: 1;
+    padding: 10px;
+}
+
+#timer {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 20px;
+    color: white;
+    text-shadow: 2px 2px #000;
+    z-index: 1;
+    padding: 10px;
+}
+
+#gameCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+}
+
+#input-area {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: 1;
+}
+
+#word-input {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 16px;
+    padding: 10px;
+    width: 300px;
+    text-align: center;
+    border: 4px solid #333;
+    border-radius: 4px;
+    background-color: #f0f0f0;
+}
+
+#word-input:focus {
+    outline: none;
+    border-color: #5C94FC;
+}
+
+/* Results page specific styles */
+body {
+    background-color: #5C94FC;
+    font-family: 'Press Start 2P', cursive;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.results-container {
+    background-color: #fff;
+    padding: 2rem;
+    border: 4px solid #000;
+    border-radius: 8px;
+    max-width: 1000px; /* Increased from 800px */
+    width: 90%;
+    margin: 20px;
+    image-rendering: pixelated;
+}
+
+.pixel-art-container {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.pixel-text {
+    font-size: 2rem;
+    color: #FFD700;
+    text-shadow: 4px 4px #000;
+    margin: 1rem 0;
+    animation: bounce 0.5s infinite alternate;
+}
+
+.score-display {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.score-value {
+    font-size: 3rem;
+    color: #4CAF50;
+    text-shadow: 2px 2px #000;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 0 auto;
+}
+
+.score-number {
+    font-size: 3rem;
+    color: #4CAF50;
+    text-shadow: 2px 2px #000;
+}
+
+.score-denominator {
+    font-size: 3rem;
+    color: #4CAF50;
+    text-shadow: 2px 2px #000;
+}
+
+.time-display {
+    text-align: center;
+    margin: 1rem 0;
+    padding: 1rem;
+    background-color: #333;
+    color: #fff;
+    border-radius: 4px;
+}
+
+.time-label {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.time-value {
+    font-size: 1.5rem;
+    color: #FFD700;
+}
+
+.results-section {
+    margin: 2rem 0;
+    padding: 1rem;
+    background-color: #f5f5f5;
+    border: 2px solid #000;
+    border-radius: 4px;
+}
+
+.section-title {
+    font-size: 1rem;
+    color: #333;
+    margin: 1rem 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #000;
+}
+
+.word-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Changed to 3 columns */
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.word-item {
+    padding: 1rem;
+    text-align: center;
+    font-size: 0.8rem;
+    border: 2px solid #000;
+    border-radius: 4px;
+    min-height: 2.5em; /* Ensure consistent height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    word-break: break-word; /* Handle long words */
+    line-height: 1.2;
+}
+
+.word-list.correct .word-item {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.word-list.wrong .word-item {
+    background-color: #FF6B6B;
+    color: white;
+}
+
+.pixel-button {
+    display: block;
+    margin: 2rem auto;
+    padding: 1rem 2rem;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1rem;
+    color: white;
+    background-color: #4CAF50;
+    border: 4px solid #000;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: transform 0.1s;
+}
+
+.pixel-button:hover {
+    transform: scale(1.05);
+}
+
+.pixel-button:active {
+    transform: scale(0.95);
+}
+
+@keyframes bounce {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-10px);
+    }
 }
